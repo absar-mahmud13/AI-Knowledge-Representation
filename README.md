@@ -1,86 +1,85 @@
-Here’s a README file for your project on GitHub, explaining how to set up and run the code for AI Knowledge Representation using logic inference. This file is structured to cover installation, usage, and explanation of the code.
+Here's a `README.md` and a GitHub repository structure for combining the provided files (`harry.py`, `mastermind.py`, `puzzle.py`, and `logic.py`) into a cohesive project. This setup assumes the repository is named **LogicPuzzleSolver**.
 
----
+### Repository Structure
+```
+LogicPuzzleSolver/
+├── logic.py           # Core logic functions and classes
+├── harry.py           # Example logic problem: Harry Potter themed
+├── mastermind.py      # Logic puzzle: Mastermind game
+├── puzzle.py          # Logic puzzle: Sorting people into houses
+├── README.md          # Project description and instructions
+├── .gitignore         # Files and folders to ignore in version control
+└── LICENSE            # License for the repository (if applicable)
+```
 
-# AI Knowledge Representation with Logic Inference
+### README.md
 
-This project demonstrates AI knowledge representation and logic inference using Python. The code uses symbols and logical constraints to model knowledge about a hypothetical game scenario (similar to "Clue") to deduce information about characters, rooms, and weapons based on known and unknown facts.
+```markdown
+# LogicPuzzleSolver
 
-## Table of Contents
+LogicPuzzleSolver is a Python project for solving logical puzzles using a knowledge base and inference mechanisms. The project uses logical symbols, expressions, and model checking to represent and evaluate statements and conditions in various puzzles.
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Code Explanation](#code-explanation)
-- [Sample Output](#sample-output)
-- [License](#license)
+## Contents
 
-## Project Overview
-
-This code applies principles of AI Knowledge Representation by representing characters, rooms, and weapons as symbols, and applying logical constraints to determine which symbols can be inferred to be true, false, or unknown. Inference is achieved through logical functions and constraints.
-
-## Features
-
-- Define symbols for various entities (characters, rooms, and weapons).
-- Add logical constraints to form a knowledge base (KB).
-- Use inference to deduce the truth values of different symbols.
-- Display results with color-coded outputs for easier interpretation.
+- **`logic.py`**: Contains core classes and functions for defining logical expressions and evaluating them against a model.
+- **`harry.py`**: Uses logic to solve a hypothetical Harry Potter-themed puzzle involving characters and conditions.
+- **`mastermind.py`**: Implements the game logic for a Mastermind-inspired puzzle where colors must be arranged based on logical rules.
+- **`puzzle.py`**: A puzzle to assign people to houses using logical constraints and rules.
 
 ## Installation
 
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/your-username/ai-knowledge-representation.git
-    cd ai-knowledge-representation
-    ```
-
-2. **Install Dependencies**:
-    Make sure you have Python installed, and then install required packages:
-    ```bash
-    pip install termcolor
-    ```
-
-    You may need a logic inference module, such as `logic.py`. If it’s a custom module, ensure it’s in the project directory.
+Clone the repository and navigate to the directory:
+```bash
+git clone https://github.com/yourusername/LogicPuzzleSolver.git
+cd LogicPuzzleSolver
+```
 
 ## Usage
 
-To run the code, execute the main script:
+Each file can be run individually to solve a different puzzle. Ensure that all files are in the same directory as they import the `logic.py` file for logical operations.
+
+### Running Puzzles
+
+To run each puzzle, use the following commands:
+
 ```bash
-python main.py
+python harry.py        # Solves the Harry Potter logic puzzle
+python mastermind.py   # Solves the Mastermind logic puzzle
+python puzzle.py       # Solves the house assignment logic puzzle
 ```
 
-The output will display symbols with a "YES" status (green), indicating known truths, and "MAYBE" for indeterminate symbols.
+Each script will output logical conclusions based on the constraints and rules defined within.
 
-## Code Explanation
+## Example Output
 
-The code is divided into key sections:
+The output of each puzzle is based on the logical deductions made. For example, running `harry.py` might produce results like whether it is raining based on character actions.
 
-1. **Symbol Definition**: Defines each character, room, and weapon as a symbol.
-2. **Knowledge Base (KB) Construction**: Adds constraints to represent known facts (e.g., certain characters, rooms, or weapons may or may not be in the solution).
-3. **Inference Function**: Uses `model_check()` to determine the truth value of each symbol based on the KB. Outputs are color-coded:
-   - **Green (YES)**: Indicates a certain true symbol.
-   - **MAYBE**: The symbol’s truth value cannot be definitively determined.
+## Contributing
 
-4. **Sample Code Explanation**: Check the source code for comments explaining each section of logic, symbol setup, and inference.
-
-## Sample Output
-
-Sample output based on current constraints:
-```
-MsScarlet: YES
-library: YES
-knife: YES
-ProfPlum: MAYBE
-ballroom: MAYBE
-```
-
-Here, symbols marked "YES" have been inferred to be true based on the knowledge base, while "MAYBE" means the inference couldn’t determine their status.
+Feel free to submit issues or contribute by opening pull requests.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
 
----
+### .gitignore
 
-Feel free to modify this README as per your specific project needs! Let me know if you'd like further customization.
+Create a `.gitignore` file to ignore unnecessary files, especially if you plan to add virtual environments or other temporary files:
+
+```
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+```
+
+This setup provides structure and guidance on using each file, helping users understand and run the different logic puzzles in the project.
